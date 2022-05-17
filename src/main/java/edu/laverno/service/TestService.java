@@ -17,9 +17,10 @@ public class TestService {
     }
 
     public void startTesting() {
-        System.out.println("Hello, dear student!\nTest:");
-
         Scanner scr = new Scanner(System.in);
+        String name = scr.nextLine();
+
+        System.out.println("Hello, " + name + "!\nTest:");
 
         List<Question> questionList = dao.getQuestion();
         List<Integer> answers = new ArrayList<>();
@@ -30,6 +31,7 @@ public class TestService {
             answers.add(scr.nextInt());
         }
 
+        System.out.print("Student " + name + "\n");
         System.out.println(checkAnswers(answers) + "/" + questionList.size());
     }
 
